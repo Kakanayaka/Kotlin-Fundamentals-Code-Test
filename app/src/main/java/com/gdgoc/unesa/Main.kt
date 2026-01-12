@@ -15,8 +15,7 @@ class KotlinFundamentalsTest {
      * Practice: val, var, and basic types
      */
     fun sumTwoNumbers(a: Int, b: Int): Int {
-        // TODO: Implement this function
-        return 0
+        return a + b
     }
 
     /**
@@ -24,20 +23,16 @@ class KotlinFundamentalsTest {
      * Practice: String type and concatenation
      */
     fun getFullName(firstName: String, lastName: String): String {
-        // TODO: Implement this function
-        return ""
+        return "$firstName $lastName"
     }
-
+    
     /**
-     * Create a function that converts temperature from Celsius to Fahrenheit.
-     * Formula: F = C * 9/5 + 32
-     * Practice: Double type and arithmetic operations
+     * Create a function that converts Celsius to Fahrenheit.
+     * Practice: Basic math operations
      */
     fun celsiusToFahrenheit(celsius: Double): Double {
-        // TODO: Implement this function
-        return 0.0
+        return celsius * 9 / 5 + 32
     }
-
     // ======================
     // 2. FUNCTIONS
     // ======================
@@ -47,8 +42,7 @@ class KotlinFundamentalsTest {
      * Practice: Function with multiple parameters and return value
      */
     fun calculateRectangleArea(width: Int, height: Int): Int {
-        // TODO: Implement this function
-        return 0
+        return width * height
     }
 
     /**
@@ -58,8 +52,7 @@ class KotlinFundamentalsTest {
      * Practice: Default parameters
      */
     fun calculatePrice(price: Double, discount: Double = 0.0): Double {
-        // TODO: Implement this function
-        return 0.0
+        return price - (price * discount)
     }
 
     /**
@@ -68,8 +61,7 @@ class KotlinFundamentalsTest {
      * Practice: Returning Pair
      */
     fun divideWithRemainder(dividend: Int, divisor: Int): Pair<Int, Int> {
-        // TODO: Implement this function
-        return Pair(0, 0)
+        return Pair(dividend / divisor, dividend % divisor)
     }
 
     // ======================
@@ -86,8 +78,13 @@ class KotlinFundamentalsTest {
      * Practice: if-else conditions
      */
     fun getGrade(score: Int): String {
-        // TODO: Implement this function
-        return ""
+        return when {
+            score >= 90 -> "A"
+            score >= 80 -> "B"
+            score >= 70 -> "C"
+            score >= 60 -> "D"
+            else -> "F"
+        }
     }
 
     /**
@@ -96,8 +93,11 @@ class KotlinFundamentalsTest {
      * Practice: when expression
      */
     fun checkNumber(number: Int): String {
-        // TODO: Implement this function
-        return ""
+        return when {
+            number > 0 -> "Positive"
+            number < 0 -> "Negative"
+            else -> "Zero"
+        }
     }
 
     /**
@@ -107,8 +107,9 @@ class KotlinFundamentalsTest {
      * Practice: Complex conditional logic
      */
     fun isLeapYear(year: Int): Boolean {
-        // TODO: Implement this function
-        return false
+        // A leap year is divisible by 4, except for years divisible by 100
+        // unless they are also divisible by 400.
+        return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)
     }
 
     // ======================
@@ -121,8 +122,11 @@ class KotlinFundamentalsTest {
      * Practice: for loop and range
      */
     fun factorial(n: Int): Long {
-        // TODO: Implement this function
-        return 0L
+        var result = 1L
+        for (i in 1..n) {
+            result *= i
+        }
+        return result
     }
 
     /**
@@ -130,8 +134,13 @@ class KotlinFundamentalsTest {
      * Practice: for loop with condition
      */
     fun countEvenNumbers(start: Int, end: Int): Int {
-        // TODO: Implement this function
-        return 0
+        var count = 0
+        for (i in start..end) {
+            if (i % 2 == 0) {
+                count++
+            }
+        }
+        return count
     }
 
     /**
@@ -139,8 +148,13 @@ class KotlinFundamentalsTest {
      * Practice: while loop
      */
     fun sumUpToN(n: Int): Int {
-        // TODO: Implement this function
-        return 0
+        var sum = 0
+        var i = 1
+        while (i <= n) {
+            sum += i
+            i++
+        }
+        return sum
     }
 
     // ======================
@@ -152,8 +166,7 @@ class KotlinFundamentalsTest {
      * Practice: List iteration and accumulation
      */
     fun sumList(numbers: List<Int>): Int {
-        // TODO: Implement this function
-        return 0
+        return numbers.sum()
     }
 
     /**
@@ -162,8 +175,7 @@ class KotlinFundamentalsTest {
      * Practice: List filtering
      */
     fun filterEvenNumbers(numbers: List<Int>): List<Int> {
-        // TODO: Implement this function
-        return emptyList()
+        return numbers.filter { it % 2 == 0 }
     }
 
     /**
@@ -172,8 +184,7 @@ class KotlinFundamentalsTest {
      * Practice: List mapping
      */
     fun squareNumbers(numbers: List<Int>): List<Int> {
-        // TODO: Implement this function
-        return emptyList()
+        return numbers.map { it * it }
     }
 
     /**
@@ -182,8 +193,7 @@ class KotlinFundamentalsTest {
      * Practice: List operations and nullable types
      */
     fun findMax(numbers: List<Int>): Int? {
-        // TODO: Implement this function
-        return null
+        return numbers.maxOrNull()
     }
 
     // ======================
@@ -195,8 +205,7 @@ class KotlinFundamentalsTest {
      * Practice: Converting List to Set and back
      */
     fun removeDuplicates(numbers: List<Int>): List<Int> {
-        // TODO: Implement this function
-        return emptyList()
+        return numbers.toSet().toList()
     }
 
     /**
@@ -204,8 +213,7 @@ class KotlinFundamentalsTest {
      * Practice: Set operations
      */
     fun unionSets(set1: Set<Int>, set2: Set<Int>): Set<Int> {
-        // TODO: Implement this function
-        return emptySet()
+        return set1.union(set2)
     }
 
     /**
@@ -214,8 +222,7 @@ class KotlinFundamentalsTest {
      * Practice: Set intersection
      */
     fun intersectSets(set1: Set<Int>, set2: Set<Int>): Set<Int> {
-        // TODO: Implement this function
-        return emptySet()
+        return set1.intersect(set2)
     }
 
     // ======================
@@ -228,8 +235,7 @@ class KotlinFundamentalsTest {
      * Practice: Map creation and manipulation
      */
     fun wordFrequency(words: List<String>): Map<String, Int> {
-        // TODO: Implement this function
-        return emptyMap()
+        return words.groupingBy { it }.eachCount()
     }
 
     /**
@@ -238,8 +244,7 @@ class KotlinFundamentalsTest {
      * Practice: Creating maps from lists
      */
     fun createGradeBook(names: List<String>, scores: List<Int>): Map<String, Int> {
-        // TODO: Implement this function
-        return emptyMap()
+        return names.zip(scores).toMap()
     }
 
     /**
@@ -248,8 +253,12 @@ class KotlinFundamentalsTest {
      * Practice: Map operations and calculations
      */
     fun calculateCartTotal(prices: Map<String, Double>, quantities: Map<String, Int>): Double {
-        // TODO: Implement this function
-        return 0.0
+        var total = 0.0
+        for ((item, quantity) in quantities) {
+            val price = prices[item] ?: 0.0
+            total += price * quantity
+        }
+        return total
     }
 
     /**
@@ -258,7 +267,9 @@ class KotlinFundamentalsTest {
      * Practice: Map transformation
      */
     fun invertMap(map: Map<String, Int>): Map<Int, String> {
-        // TODO: Implement this function
-        return emptyMap()
-    }
-}
+        val result = mutableMapOf<Int, String>()
+        for ((key, value) in map) {
+            result[value] = key
+        }
+        return result
+    }}
